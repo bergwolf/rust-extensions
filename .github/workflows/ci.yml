@@ -12,7 +12,7 @@ jobs:
         os: [ubuntu-latest, macos-latest]
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - run: cargo check --examples --tests --all-targets
       - run: cargo fmt --all -- --check --files-with-diff
       - run: cargo clippy --all-targets --all-features -- -D warnings
@@ -24,5 +24,5 @@ jobs:
     timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
       - uses: EmbarkStudios/cargo-deny-action@v1
